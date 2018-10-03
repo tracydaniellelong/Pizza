@@ -20,14 +20,10 @@ end
 def pizza_veggies()
 	veggies = ["banana pepper","pineapple","mushroom"].sample
 end
-def pextras()
-	y = gets.chomp
-	if y == "yes"
-		 extras = ["extra cheese","extra sauce","double pepperoni"].sample
-	else
-		 "no extra toppings"
-	end
+def pizza_extras()
+	extra = ["extra cheese","extra sauce","double pepperoni"].sample
 end
+
 def total(num1, num2, num3)
 	p (num1 * num2 + num3)
 end
@@ -35,7 +31,9 @@ count = 1
 size_price = 0
 
 puts "any extra toppings yes or no?"
-pextras()
+x = gets.chomp
+
+
 
 pizza.times do 
 pizza_size = psize
@@ -50,8 +48,13 @@ pizza_size = psize
 		 
 	end
 
+	if x == "y"
+		 pizza_extras
+	else x == 'n'
+		 "No extra Toppings"
+	end
 
-puts "#{count}: Your pizza size is #{pizza_size}, your crust is #{pizza_crust}, your meat is #{pizza_meat}, your veggie is #{pizza_veggies}, and your extra is #{pextras}."
+puts "#{count}: Your pizza size is #{pizza_size}, your crust is #{pizza_crust}, your meat is #{pizza_meat}, your veggie is #{pizza_veggies} and your extra is #{pizza_extras}."
 
 count = count+1
 end
