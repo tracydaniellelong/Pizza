@@ -24,16 +24,17 @@ def pizza_extras()
 	extra = ["extra cheese","extra sauce","double pepperoni"].sample
 end
 
-def total(num1, num2, num3)
-	p (num1 * num2 + num3)
+def total(num1, num2, num3, num4)
+	p (num1 * num2 + num3 + num4)
 end
 count = 1
 size_price = 0
-
+delivery_cost = 0
 puts "any extra toppings yes or no?"
 x = gets.chomp
 
-
+puts "Delivery?"
+d = gets.chomp
 
 pizza.times do 
 pizza_size = psize
@@ -54,10 +55,16 @@ pizza_size = psize
 		 "No extra Toppings"
 	end
 
+	if d == "y"
+		delivery_cost = 2
+	else d == "n"
+		delivery_cost = 0
+	end
+
 puts "#{count}: Your pizza size is #{pizza_size}, your crust is #{pizza_crust}, your meat is #{pizza_meat}, your veggie is #{pizza_veggies} and your extra is #{pizza_extras}."
 
 count = count+1
 end
 
 puts "Your total is:"
-total(pizza, prices, size_price)
+total(pizza, prices, size_price, delivery_cost)
