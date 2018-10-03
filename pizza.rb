@@ -2,7 +2,7 @@ puts "how many pizzas?"
 pizza = gets.chomp.to_i
 
 def prices()
-	10.00
+	5.00
 end
 
 def psize()
@@ -23,6 +23,23 @@ end
 def pizza_extras()
 	extra = ["extra cheese","extra sauce","double pepperoni"].sample
 end
+def topping(x)
+	print  "topping#{x}"
+
+loop do
+	if x == "yes"
+		 pizza_extras()
+		 break
+	elsif x == 'no'
+		 puts "No extra Toppings"
+		 break
+	else
+		puts "Please enter yes or no"
+		x = gets.chomp
+		break
+	end
+end
+end
 
 def total(num1, num2, num3, num4)
 	p (num1 * num2 + num3 + num4)
@@ -32,6 +49,8 @@ size_price = 0
 delivery_cost = 0
 puts "any extra toppings yes or no?"
 x = gets.chomp
+topping(x)
+
 
 puts "Delivery?"
 d = gets.chomp
@@ -47,12 +66,6 @@ pizza_size = psize
 	elsif pizza_size == "large"	
 		size_price += 15
 		 
-	end
-
-	if x == "y"
-		 pizza_extras
-	else x == 'n'
-		 "No extra Toppings"
 	end
 
 	if d == "y"
